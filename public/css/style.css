@@ -1,0 +1,126 @@
+/* Paleta de colores: 
+   --
+    #7678ed  <-- Fondo Principal
+    #A4B465  <-- Color de la Letra.
+    #ffc300  <-- 
+    #f1faee
+
+*/
+
+
+html {
+    color: black;
+    font-family: "Roboto", sans-serif; 
+}
+
+body {
+    /*background-color:#093FB4;*/
+    background-color: #7678ed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #FFFCFB;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+    border: 3px #ED3500 solid;
+    border-radius: 15px;
+    max-width: 800px; /* límite para pantallas grandes */
+    width: 90%;       /* responsivo */
+}
+
+/* Logo */
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+#eslogan {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Buscador */
+.buscador-productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.input {
+    flex: 1; /* ocupa todo el espacio disponible */
+    font-size: 16px;
+    padding: 12px 15px;
+    border: 3px #ED3500 solid;
+    border-radius: 8px 0 0 8px; /* esquinas redondeadas */
+    outline: none;
+}
+
+/* Botón */
+#btn-search {
+    background-color: #093FB4;
+    border-color: #ED3500;
+    padding: 12px 15px;
+    border-radius: 0 8px 8px 0; /* esquinas redondeadas */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-search:hover {
+    background-color: #000084;
+}
+
+.icon-search {
+    fill: #fff; /* color del ícono */
+    width: 20px;
+    height: 20px;
+}
+
+.tarjeta {
+    background-color: #FFFCFB;
+    text-align: right;
+    max-width: 800px;
+    width: 90%;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 5px #ED3500 solid;
+    border-top-right-radius: 5px;
+}
+
+.tarjeta img { 
+    max-width: 200px; /* ancho máximo */ 
+    height: auto; /* mantiene proporción */ 
+    display: block; /* evita problemas de alineación */ 
+    margin: 0 auto; /* centra la imagen */ 
+}
+
+/* 📱 Responsividad */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .buscador-prodcutos {
+        flex-direction: column;
+    }
+
+    .input {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #btn-search {
+        border-radius: 8px;
+        width: 100%;
+        padding: 10px;
+    }
+}
