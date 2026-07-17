@@ -1,16 +1,24 @@
-import express from 'express'; // servidor
+import express from 'express';
 import multer from 'multer'; // middleware
 import fs from 'fs'; // fileSystem
+import cors from 'cors';
 import Producto from './public/clases/Producto.js';
 
+const app = express();
 const upload = multer( { dest : '/public/uploads/'} );
-
-const app = express(); // <== creamos el servidor.
+const PUERTO = process.env.PORT || 3000;
 
 // Middleware para parsear datos de formularios (texto) 
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public')); // carpeta donde está eliminar_producto.html
+
+app.use(cors());
+
+
+app.listen(PUERTO, () => {
+    console.log(`Servidor escuchando en puerto ${PUERTO}...`);
+});
 
 
 /**
@@ -25,7 +33,7 @@ function existeArchivoJSON(path) {
 
 /**
  * 
- * @param {*} path es la ruta donde se encuentran el archivo .json.
+ * @param {*} file es la ruta donde se encuentran el archivo .json.
  * @param {*} arregloDeProductos es el arreglo que reemplazara al archivo .json.
  * post: Reemplaza el contenido de un archivo .json por el contenido que hay dentro
  * de un arreglo.
@@ -112,9 +120,4 @@ app.delete('/productos/:id', (req, res) => {
     fs.writeFileSync('./public/data/productos.json', JSON.stringify(productos, null, 2));
 
     res.send('Producto eliminado correctamente');
-});
-
-
-app.listen(3000, () => {
-     console.log('Servidor en puerto 3000');
 });
