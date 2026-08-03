@@ -11,10 +11,7 @@ const PUERTO = process.env.PORT || 3000;
 // Middleware para parsear datos de formularios (texto) 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public')); // carpeta donde está eliminar_producto.html
-
 app.use(cors());
-
 
 app.listen(PUERTO, () => {
     console.log(`Servidor escuchando en puerto ${PUERTO}...`);
