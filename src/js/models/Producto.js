@@ -1,5 +1,5 @@
-import { generarID } from './generar_id.js';
-import { obtenerFecha } from './generar_fecha.js';
+import { generarID } from '../utils/generar_id.js';
+import { obtenerFecha } from '../utils/generar_fecha.js';
 
 class Producto {
 
