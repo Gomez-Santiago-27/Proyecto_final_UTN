@@ -1,0 +1,120 @@
+:root{
+    --color-de-fondo-general: #FFFFFF;
+    --color-de-fondo-gris: #EDEDED;
+    --color-de-fondo-naranja: #DC0A2E;
+    --color-de-la-fuente-azul: #203A8F;
+    --color-amarillo: yellow;
+    --borde: 3px var(--color-de-la-fuente-azul) solid;
+    --padding-entradas-de-texto: 12px 15px;
+}
+
+body {
+    display: grid;
+    color: var(--color-de-la-fuente-azul);
+    background-color: var(--color-de-fondo-y-fuente);
+    font-family: "Roboto", sans-serif; 
+    margin: 0;
+}
+
+.contenedor {
+    display: grid;
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-fondo-naranja);
+    margin: 20px auto;
+    padding: 20px 25px;
+    text-align: center;
+    border: var(borde);
+    border-radius: 10px;
+    min-width: 500px;
+    width: 70%;
+}
+
+/* Logo */
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+#eslogan {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Buscador */
+.buscador-de-productos {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    /*flex: 1;  ocupa todo el espacio disponible */
+    font-size: 16px;
+    padding: var(--padding-entradas-de-texto);
+    border: var(--borde);
+    border-radius: 8px 0 0 8px; /* esquinas redondeadas */
+    outline: none;
+    max-width: 50%;
+    width: 45%;
+}
+
+/* Botón */
+#btn-search {
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-la-fuente-azul);
+    border-color: var(--color-de-fondo-general);
+    padding: var(--padding-entradas-de-texto); 
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 3px var(--color-de-fondo-gris) solid;
+}
+
+#btn-search:hover {
+    color: var(--color-de-la-fuente-azul);
+    background-color: var(--color-de-fondo-gris);
+    border: var(--borde);
+    transition-duration: 0.3s;
+}
+
+.tarjeta {
+    background-color: #FFFCFB;
+    text-align: right;
+    max-width: 800px;
+    width: 90%;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 5px #ED3500 solid;
+    border-top-right-radius: 5px;
+}
+
+.tarjeta img { 
+    max-width: 200px; /* ancho máximo */ 
+    height: auto; /* mantiene proporción */ 
+    display: block; /* evita problemas de alineación */ 
+    margin: 0 auto; /* centra la imagen */ 
+}
+
+/* 📱 Responsividad 
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .buscador-prodcutos {
+        flex-direction: column;
+    }
+
+    .input {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #btn-search {
+        border-radius: 8px;
+        width: 100%;
+        padding: 10px;
+    }
+}*/
