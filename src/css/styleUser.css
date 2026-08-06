@@ -23,13 +23,12 @@ body {
     margin: 20px auto;
     padding: 20px 25px;
     text-align: center;
-    border: var(borde);
+    border: 4px var(--color-de-la-fuente-azul) solid;
     border-radius: 10px;
     min-width: 500px;
     width: 70%;
 }
 
-/* Logo */
 .logo img {
     max-width: 100px;
     height: auto;
@@ -40,15 +39,13 @@ body {
     margin-top: 2rem;
 }
 
-/* Buscador */
-.buscador-de-productos {
-    display:flex;
+.buscador {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .input {
-    /*flex: 1;  ocupa todo el espacio disponible */
     font-size: 16px;
     padding: var(--padding-entradas-de-texto);
     border: var(--borde);
@@ -58,7 +55,6 @@ body {
     width: 45%;
 }
 
-/* Botón */
 #btn-search {
     color: var(--color-de-fondo-general);
     background-color: var(--color-de-la-fuente-azul);
@@ -94,27 +90,3 @@ body {
     display: block; /* evita problemas de alineación */ 
     margin: 0 auto; /* centra la imagen */ 
 }
-
-/* 📱 Responsividad 
-@media (max-width: 600px) {
-    .container {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
-    .buscador-prodcutos {
-        flex-direction: column;
-    }
-
-    .input {
-        border-radius: 8px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    #btn-search {
-        border-radius: 8px;
-        width: 100%;
-        padding: 10px;
-    }
-}*/
