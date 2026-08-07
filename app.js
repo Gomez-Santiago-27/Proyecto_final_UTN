@@ -20,6 +20,10 @@ app.listen(PUERTO, () => {
     console.log(`Servidor escuchando en puerto ${PUERTO}...`);
 });
 
+app.get('/', (req, res) => {
+    res.json('Bienvenido a mi Servidor de Node.js');
+});
+
 // Cargar productos.json 
 app.post('/images/single', upload.single('imagen'), (req, res) => {
     guardarProductoEnJSON(req.file, req.body.descripcion, req.body.categoria, req.body.precio);
@@ -31,7 +35,9 @@ app.post('/images/single', upload.single('imagen'), (req, res) => {
 
 // Obtener lista de productos
 app.get('/productos', (req, res) => {
-    res.json('./src/data/productos.json');
+    let productos = JSON.parse(fs.readFileSync('./src/data/productos.json', 'utf8'));
+
+    res.json(productos);
 });
 
 // Eliminar producto por ID
