@@ -34,7 +34,7 @@ app.post('/images/single', upload.single('imagen'), (req, res) => {
 });
 
 // Obtener lista de productos
-app.get('/productos', (req, res) => {
+app.get('/api/productos', (req, res) => {
     let productos = JSON.parse(fs.readFileSync('./src/data/productos.json', 'utf8'));
 
     res.json(productos);
