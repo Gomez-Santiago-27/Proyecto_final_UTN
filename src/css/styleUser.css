@@ -29,6 +29,23 @@ body {
     width: 70%;
 }
 
+nav {
+    display: flex;
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-fondo-naranja);
+    margin: 20px auto;
+    padding: 20px 25px;
+    text-align: center;
+    border: 4px var(--color-de-la-fuente-azul) solid;
+    border-radius: 10px;
+    min-width: 70%;
+    width: 70%;
+}
+
+nav button {
+    margin: 0 15px;
+}
+
 .logo img {
     max-width: 100px;
     height: auto;
@@ -55,7 +72,7 @@ body {
     width: 45%;
 }
 
-#btn-search {
+.btn{
     color: var(--color-de-fondo-general);
     background-color: var(--color-de-la-fuente-azul);
     border-color: var(--color-de-fondo-general);
@@ -66,27 +83,41 @@ body {
     border: 3px var(--color-de-fondo-gris) solid;
 }
 
-#btn-search:hover {
+.btn:hover {
     color: var(--color-de-la-fuente-azul);
     background-color: var(--color-de-fondo-gris);
     border: var(--borde);
     transition-duration: 0.3s;
 }
 
+#seccionDeProductos {
+    display: flex;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px 10px;
+    min-width: 70%;
+    width: 70%;
+}
+
 .tarjeta {
-    background-color: #FFFCFB;
-    text-align: right;
-    max-width: 800px;
-    width: 90%;
-    margin: 3rem auto;
-    padding: 2rem;
-    border: 5px #ED3500 solid;
-    border-top-right-radius: 5px;
+    display: grid;
+    font-size: 14px;
+    background-color: var(--color-de-fondo-gris);
+    color: black;
+    min-width: 200px;
+    min-height: 250px;
+    height: 250px;
+    width: 200px;
+    border: var(--borde);
+    margin: 20px 7px;
+    padding: 5px 5px;
 }
 
 .tarjeta img { 
-    max-width: 200px; /* ancho máximo */ 
-    height: auto; /* mantiene proporción */ 
+    min-height: 80%;
+    min-width: 50%; 
+    width: 50%;
+    height: 50%;
     display: block; /* evita problemas de alineación */ 
     margin: 0 auto; /* centra la imagen */ 
 }

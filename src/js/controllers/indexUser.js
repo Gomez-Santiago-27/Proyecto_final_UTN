@@ -1,23 +1,65 @@
 import { obtenerTodosLosProductos } from "../utils/obtenerProductos.js";
 
 const seccionDeProductos = document.querySelector('#seccionDeProductos');
+const entradaDeTextoBuscador = document.querySelector('#entradaDeTextoBuscador');
+const botonBuscar = document.querySelector('#botonBuscador');
+const productos = await obtenerTodosLosProductos();
+
 /**
- * post: ejecuta el sistema principal
+ * 
+ * @param {*} arreglo es el arreglo que recorre la función.
+ * 
+ * post: permite crear una 'tarjeta' por cada elemento del arreglo 
+ * y lo coloca dentro de 'seccionDeProductos'.
  */
-async function main() {
-   const productos = await obtenerTodosLosProductos();
-   productos.forEach(producto => {
-      
-      const tarjeta = document.createElement('article');
-      tarjeta.setAttribute("class", "tarjeta");
-      tarjeta.innerHTML = `
-         <img src="${producto.imagen}"></img>
-         <h3>${producto.descripcion}</h3>
-         <p>${producto.categoria}</p>
-         <p>$${producto.precio}</p>
-         <button class="btn-search" id="btn${producto.id}">Agregar</button>
-         `;
-      seccionDeProductos.appendChild(tarjeta);
-   });
+function recorrerArregloYMostrarlo(arreglo) {
+   if(arreglo.length !== 0) {
+      arreglo.forEach(producto => {
+            const tarjeta = document.createElement('article');
+            tarjeta.setAttribute("class", "tarjeta");
+            tarjeta.innerHTML = `
+               <img src="${producto.imagen}"></img>
+               <p><b>${producto.descripcion}</b></p>
+               <p>$${producto.precio}</p>
+               <button class="btn" id="btn${producto.id}">Agregar</button>
+            `;
+            seccionDeProductos.appendChild(tarjeta);
+      });
+   } else {
+      seccionDeProductos.innerHTML = `<p>No se encontraron productos.</p>`;
+   }
 }
-main();
+
+/**
+ * 
+ * @param {*} arregloDeProductos: es el arreglo que contiene los productos a mostrar.
+ * post: muestra todos los productos disponibles. 
+ */
+function mostrarTodosLosProductos(arregloDeProductos) {
+   if (arregloDeProductos.length === 0) {
+      seccionDeProductos.innerHTML = `<p>No se encontraron productos.</p>`;   
+   } else {
+      recorrerArregloYMostrarlo(arregloDeProductos);
+   }
+}
+
+function mostrarProductosBuscados(arreglo) {
+   if ( entradaDeTextoBuscador.value != null) {
+      seccionDeProductos.innerHTML = `<p>Resultados de la busqueda</p>`
+      let busquedaDelUsuario = entradaDeTextoBuscador.value.toLowerCase().trim();
+      let nuevoArreglo = [];
+      arreglo.forEach(producto => {
+         if (producto.descripcion.startsWith(busquedaDelUsuario) ||
+            producto.descripcion.includes(busquedaDelUsuario)) {
+            
+            nuevoArreglo.push(producto);
+         }
+      });
+      recorrerArregloYMostrarlo(nuevoArreglo);
+      entradaDeTextoBuscador.value = "";
+   }
+}
+
+mostrarTodosLosProductos(productos);
+
+botonBuscar.addEventListener('click', mostrarProductosBuscados.bind(null, productos));

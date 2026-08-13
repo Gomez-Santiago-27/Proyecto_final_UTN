@@ -33,10 +33,8 @@ app.post('/images/single', upload.single('imagen'), (req, res) => {
      res.send('Se subio correctamente'); // mensaje para el front.
 });
 
-// Obtener lista de productos
 app.get('/api/productos', (req, res) => {
     let productos = JSON.parse(fs.readFileSync('./src/data/productos.json', 'utf8'));
-
     res.json(productos);
 });
 

@@ -18,25 +18,3 @@ export async function obtenerTodosLosProductos() {
 		return [];
 	}
 }
-
-export function verTodosLosProductos(arreglo) {
-	arreglo.forEach(producto => {
-      console.log(producto);
-   });
-}
-
-export function verHerramientas(arreglo) {
-   arreglo.forEach(producto => {
-      if (producto.categoria == 'Herramientas') {
-         console.log(producto);
-      }
-   });
-}
-
-export function verSanitarios(arreglo) {
-   arreglo.forEach(producto => {
-      if (producto.categoria == 'Sanitarios') {
-         console.log(producto);
-      }
-   });
-}
