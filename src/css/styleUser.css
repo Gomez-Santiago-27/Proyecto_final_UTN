@@ -108,7 +108,7 @@ nav button {
     min-height: 250px;
     height: 250px;
     width: 200px;
-    border: var(--borde);
+    border-radius: 5px;
     margin: 20px 7px;
     padding: 5px 5px;
 }

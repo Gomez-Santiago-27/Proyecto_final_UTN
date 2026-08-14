@@ -21,7 +21,7 @@ function recorrerArregloYMostrarlo(arreglo) {
                <img src="${producto.imagen}"></img>
                <p><b>${producto.descripcion}</b></p>
                <p>$${producto.precio}</p>
-               <button class="btn" id="btn${producto.id}">Agregar</button>
+               <button class="btn" id="btn${producto.id}">Pedir</button>
             `;
             seccionDeProductos.appendChild(tarjeta);
       });
