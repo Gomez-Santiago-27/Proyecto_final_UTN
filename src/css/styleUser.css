@@ -3,7 +3,7 @@
     --color-de-fondo-gris: #EDEDED;
     --color-de-fondo-naranja: #DC0A2E;
     --color-de-la-fuente-azul: #203A8F;
-    --color-amarillo: yellow;
+    --ancho: 80%
     --borde: 3px var(--color-de-la-fuente-azul) solid;
     --padding-entradas-de-texto: 12px 15px;
 }
@@ -26,7 +26,7 @@ body {
     border: 4px var(--color-de-la-fuente-azul) solid;
     border-radius: 10px;
     min-width: 500px;
-    width: 70%;
+    width: 80%;
 }
 
 nav {
@@ -39,7 +39,7 @@ nav {
     border: 4px var(--color-de-la-fuente-azul) solid;
     border-radius: 10px;
     min-width: 70%;
-    width: 70%;
+    width: 80%;
 }
 
 nav button {
@@ -49,11 +49,6 @@ nav button {
 .logo img {
     max-width: 100px;
     height: auto;
-}
-
-#eslogan {
-    text-align: center;
-    margin-top: 2rem;
 }
 
 .buscador {
@@ -90,24 +85,44 @@ nav button {
     transition-duration: 0.3s;
 }
 
-#seccionDeProductos {
+#principal {
     display: flex;
+    align-items: left;
+    max-height: 500px;
+}
+
+#seccionDeProductos {
+    /*display flex*/
+    display: grid;
+    border: var(--borde);
     overflow-y: auto;
     overflow-x: auto;
     padding: 20px 10px;
-    min-width: 70%;
-    width: 70%;
+    min-width: 50%;
+    width: 50%;
+}
+
+#seccionDePedido {
+    display: grid;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px 10px;
+    min-width: 50%;
+    width: 50%;
 }
 
 .tarjeta {
-    display: grid;
+    display: flex;
     font-size: 14px;
     background-color: var(--color-de-fondo-gris);
     color: black;
-    min-width: 200px;
-    min-height: 250px;
-    height: 250px;
-    width: 200px;
+
+    min-width: 400px;
+    min-height: 100px;
+    width: 400px;
+    height: 100px;
+    
+
     border-radius: 5px;
     margin: 20px 7px;
     padding: 5px 5px;
