@@ -7,7 +7,8 @@ export function guardarProductoEnJSON(imagen, descripcion, categoria, precio) {
 
      //2- crea el objeto Producto
      let nuevoProducto = new Producto(
-        `../../assets/uploads/${imagen.originalname}`,
+//        `../../assets/uploads/${imagen.originalname}`,
+        `/src/assets/uploads/${imagen.originalname}`,
         descripcion, 
         categoria, 
         precio

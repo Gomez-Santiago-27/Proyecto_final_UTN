@@ -2,14 +2,14 @@ import express from 'express';
 import multer from 'multer'; // middleware
 import fs from 'fs';
 import cors from 'cors';
-// ===========================
+
 import Producto from './src/js/models/Producto.js';
 //import archivoDeProductosJson from './src/data/productos.json';
 import { existeArchivoJSON } from './src/js/utils/existeArchivoJson.js';
 import { guardarProductoEnJSON } from './src/js/utils/guardarProductoEnJson.js';
 
 const app = express();
-const upload = multer( { dest : './src/assets/uploads'} );
+const upload = multer( { dest : '/src/assets/uploads'} );
 const PUERTO = process.env.PORT || 3000;
 
 app.use(cors());

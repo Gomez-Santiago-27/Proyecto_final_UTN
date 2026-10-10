@@ -2,7 +2,7 @@
   {
     "id": 1,
     "fecha": "05/04/2026",
-    "imagen": "./src/assets/uploads/arena.png",
+    "imagen": "/src/assets/uploads/arena.png",
     "descripcion": "arena",
     "categoria": "materiales",
     "precio": 30000
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "fecha": "06/04/2026",
-    "imagen": "./src/assets/uploads/bloque_de_cemento.png",
+    "imagen": "/src/assets/uploads/bloque_de_cemento.png",
     "descripcion": "bloques de cemento x unidad",
     "categoria": "materiales",
     "precio": 1300
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "fecha": "06/04/2026",
-    "imagen": "./src/assets/uploads/cal_cacique_cinco_baldes.png",
+    "imagen": "/src/assets/uploads/cal_cacique_cinco_baldes.png",
     "descripcion": "cal 5 baldes",
     "categoria": "materiales",
     "precio": 6000
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "fecha": "06/04/2026",
-    "imagen": "./src/assets/uploads/huecos_del_8.png",
+    "imagen": "/src/assets/uploads/huecos_del_8.png",
     "descripcion": "Huecos del 8 x unidad",
     "categoria": "materiales",
     "precio": 500
