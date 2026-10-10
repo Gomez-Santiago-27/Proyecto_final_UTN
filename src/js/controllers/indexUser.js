@@ -19,9 +19,11 @@ function recorrerArregloYMostrarlo(arreglo) {
             tarjeta.setAttribute("class", "tarjeta");
             tarjeta.innerHTML = `
                <img src="${producto.imagen}"></img>
+               <div>
                <p><b>${producto.descripcion}</b></p>
                <p>$${producto.precio}</p>
                <button class="btn" id="btn${producto.id}">Pedir</button>
+               </div>
             `;
             seccionDeProductos.appendChild(tarjeta);
       });
