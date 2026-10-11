@@ -3,8 +3,13 @@ import { obtenerTodosLosProductos } from "../utils/obtenerProductos.js";
 const seccionDeProductos = document.querySelector('#seccionDeProductos');
 const entradaDeTextoBuscador = document.querySelector('#entradaDeTextoBuscador');
 const botonBuscar = document.querySelector('#botonBuscador');
-const cuerpoPedido = document.querySelector("#cuerpoPedido")
+const cuerpoPedido = document.querySelector("#cuerpoPedido");
+const totalPedido = document.querySelector("#totalPedido");
 const productos = await obtenerTodosLosProductos();
+const confirmarPedido = document.querySelector("#confirmarPedido");
+const limpiarPedido = document.querySelector("#limpiarPedido");
+
+let total = 0;
 
 /**
  * 
@@ -27,7 +32,7 @@ function recorrerArregloYMostrarlo(arreglo) {
                <div class="card-body">
                <h5 class="card-title">${producto.descripcion}</h5>
                <p class="card-text">$${producto.precio}</p>
-               <button class="btn btn-primary" id="btn${producto.id}">Pedir</button>
+               <button class="btn btn-primary">Agregar al presupuesto</button>
                </div>
             </div>
             </div>
@@ -81,16 +86,32 @@ function mostrarProductosBuscados(arreglo) {
  * post : agrega productos a la tabla de pedidos. 
  */
 function agregarAlPedido(producto, cantidad) {
-    const subtotal = producto.precio * cantidad;
-    const fila = document.createElement('tr');
-    fila.innerHTML = `
-        <td>${producto.id}</td>
-        <td>${producto.descripcion}</td>
-        <td>${cantidad}</td>
-        <td>$${subtotal}</td>
-    `;
-    cuerpoPedido.appendChild(fila);
+   const subtotal = producto.precio * cantidad;
+   total = total + subtotal;
+   const fila = document.createElement('tr');
+   fila.innerHTML = `
+      <td>${producto.id}</td>
+      <td>${producto.descripcion}</td>
+      <td>${cantidad}</td>
+      <td>$${subtotal}</td>
+   `;
+   cuerpoPedido.appendChild(fila);
+   totalPedido.textContent = `$${total}`;
 }
+
+confirmarPedido.addEventListener('click', () => {
+   // envía el contenido de la tabla a la API que este lo guarde en 'pedidos.json'
+   // Va a hacer una solicitud POST express.
+});
+
+/**
+ * post: borra los elementos de la tabla del pedido y reinicia el total a 0.
+ */
+limpiarPedido.addEventListener('click', () => {
+   cuerpoPedido.innerHTML = "";
+   total = 0;
+   totalPedido.textContent =  `$${total}`;
+})
 
 mostrarTodosLosProductos(productos);
 

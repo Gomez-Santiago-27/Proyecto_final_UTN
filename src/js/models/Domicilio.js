@@ -1,11 +1,9 @@
 class Domicilio {
 
-    constructor(localidad, codigoPostal, calle, numeroCalle) {
-        this.provincia = "Buenos Aires"; 
-        // Esta destinado a La Matanza, Buenos Aires
+    constructor(localidad, codigoPostal, nombreCalle, numeroCalle) {
         this.localidad = localidad;
         this.codigoPostal = codigoPostal;
-        this.calle = calle;
+        this.nombreCalle = nombreCalle;
         this.numeroCalle = numeroCalle;
     }
 }

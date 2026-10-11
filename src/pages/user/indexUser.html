@@ -71,9 +71,76 @@
                         </tr>
                     </tfoot>
                 </table>
+                <button class="btn btn-primary" id="confirmarPedido">Confirmar</button>
+                <button class="btn btn-secondary" id="limpiarPedido">Limpiar</button>
             </section>
         </div>
     </section>
+
+    <!-- FORMULARIO DE CONFIRMACIÓN DEL PEDIDO -->
+    <form id="formPedido" class="mt-4">
+
+    <!-- Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre (completo o parcial)</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+
+        <!-- Domicilio -->
+        <fieldset class="mb-3">
+            <legend class="h6">Domicilio</legend>
+
+            <div class="mb-3">
+                <label for="localidad" class="form-label">Localidad</label>
+                <select id="localidad" name="localidad" class="form-select" required>
+                    <option value="" selected disabled>Elegí una localidad</option>
+                    
+                    <option>González Catán</option>
+                    <option>Gregorio de Laferrere</option>
+                    <option>Isidro Casanova</option>
+                    <option>San Justo</option>
+                    <option>Virrey del Pino</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="codigoPostal" class="form-label">Código postal</label>
+                <input type="number" id="codigoPostal" name="codigoPostal" class="form-control" min="1000" max="9999" required>
+            </div>
+
+            <div class="row">
+                <div class="col-8 mb-3">
+                    <label for="calle" class="form-label">Calle</label>
+                    <input type="text" id="calle" name="calle" class="form-control" required>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="number" id="numero" name="numero" class="form-control" min="0" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Fecha de envío -->
+        <fieldset class="mb-3">
+            <legend class="h6">Fecha de envío</legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoEnvio" id="envioLoAntes" value="lo-antes-posible" checked>
+                <label class="form-check-label" for="envioLoAntes">Lo antes posible</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoEnvio" id="envioFecha" value="fecha">
+                <label class="form-check-label" for="envioFecha">Elegir una fecha</label>
+            </div>
+
+            <input type="date" id="fechaEnvio" name="fechaEnvio" class="form-control mt-2" disabled>
+        </fieldset>
+
+        <!-- Botones -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-secondary">Cancelar</button>
+    </form>
 
     <!--
     <footer id="pieDePagina">
