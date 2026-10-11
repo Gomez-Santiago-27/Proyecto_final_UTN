@@ -3,6 +3,7 @@ import { obtenerTodosLosProductos } from "../utils/obtenerProductos.js";
 const seccionDeProductos = document.querySelector('#seccionDeProductos');
 const entradaDeTextoBuscador = document.querySelector('#entradaDeTextoBuscador');
 const botonBuscar = document.querySelector('#botonBuscador');
+const cuerpoPedido = document.querySelector("#cuerpoPedido")
 const productos = await obtenerTodosLosProductos();
 
 /**
@@ -15,17 +16,28 @@ const productos = await obtenerTodosLosProductos();
 function recorrerArregloYMostrarlo(arreglo) {
    if(arreglo.length !== 0) {
       arreglo.forEach(producto => {
-            const tarjeta = document.createElement('article');
-            tarjeta.setAttribute("class", "tarjeta");
-            tarjeta.innerHTML = `
-               <img src="${producto.imagen}"></img>
-               <div>
-               <p><b>${producto.descripcion}</b></p>
-               <p>$${producto.precio}</p>
-               <button class="btn" id="btn${producto.id}">Pedir</button>
+         const tarjeta = document.createElement('article');
+         tarjeta.className = "card mb-3";
+         tarjeta.innerHTML = `
+            <div class="row g-0 align-items-center">
+               <div class="col-4">
+                  <img src="${producto.imagen}" class="img-fluid rounded-start" alt="${producto.descripcion}">
                </div>
-            `;
-            seccionDeProductos.appendChild(tarjeta);
+               <div class="col-8">
+               <div class="card-body">
+               <h5 class="card-title">${producto.descripcion}</h5>
+               <p class="card-text">$${producto.precio}</p>
+               <button class="btn btn-primary" id="btn${producto.id}">Pedir</button>
+               </div>
+            </div>
+            </div>
+         `;
+
+         // El botón de ESTA tarjeta ya sabe de qué producto es
+         tarjeta.querySelector('button').addEventListener('click', () => {
+            agregarAlPedido(producto, 1);
+         });
+         seccionDeProductos.appendChild(tarjeta);
       });
    } else {
       seccionDeProductos.innerHTML = `<p>No se encontraron productos.</p>`;
@@ -60,6 +72,24 @@ function mostrarProductosBuscados(arreglo) {
       recorrerArregloYMostrarlo(nuevoArreglo);
       entradaDeTextoBuscador.value = "";
    }
+}
+
+/**
+ * 
+ * @param {*} producto 
+ * @param {*} cantidad
+ * post : agrega productos a la tabla de pedidos. 
+ */
+function agregarAlPedido(producto, cantidad) {
+    const subtotal = producto.precio * cantidad;
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+        <td>${producto.id}</td>
+        <td>${producto.descripcion}</td>
+        <td>${cantidad}</td>
+        <td>$${subtotal}</td>
+    `;
+    cuerpoPedido.appendChild(fila);
 }
 
 mostrarTodosLosProductos(productos);

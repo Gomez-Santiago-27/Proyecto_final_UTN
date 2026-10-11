@@ -1,0 +1,14 @@
+/* SECCION PRINCIPAL (PRODUCTOS + PEDIDO) */
+.container.my-4 {
+    max-height: 50rem;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.card.mb-3 {
+    max-height: 250px;
+}
+
+#seccionDeProductos {
+    overflow-y: auto;
+    overflow-x: auto;
+}

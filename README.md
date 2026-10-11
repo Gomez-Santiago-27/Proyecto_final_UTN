@@ -11,14 +11,7 @@ En 'indexUser.html' se agregó un contenedor donde se alojan tanto los productos
 Productos disponibles |  Tu pedido
 
 
-#===
-1) Estoy teniendo un problema a la hora de cargar las imágenes de los productos. Entiendo que se debe a las rutas de los archivos.
-
-Por ejemplo, si estoy en: src/pages/user/indexUser.html.
-
-Entiendo que su ruta para poder acceder al elemento sería: /../../assets/uploads/arena.png, por poner un ejemplo.
-
-2) Necesito alinear los elementos de las tarjetas. MI IDEA ES:
+1) Necesito alinear los elementos de las tarjetas. MI IDEA ES:
 
 IMAGEN  | TITULO
         | PRECIO

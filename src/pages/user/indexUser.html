@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../../css/styleUser.css" rel="Stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="Stylesheet">
+    <link href="../../css/style.css" rel="Stylesheet">
     <meta charset="UTF-8">
     <title>Login Casa Gomez</title>
 </head>
 <body>
-    <header id="cabecera" class="contenedor">
-        <section class="logo">
-            <img src="../../assets/img/logo_2.png" alt="" height="80" width="100"> 
-            <h2>Construí tu futuro!</h2>
-        </section>
-    
-        <section id="buscador">
-            <input type="text" class="input" id="entradaDeTextoBuscador" placeholder="Encontra lo que necesitas...">
-            <button type="button" class="btn" id="botonBuscador">Buscar</button>
-        </section>
-    </header>
-    
-    
-    <nav>
-        <a href="/index.html" class="btn">Volver al inicio!</a>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="../../assets/img/logo_2.png" alt="" height="80" width="100">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor04">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index.html">Ir al Inicio
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" id="entradaDeTextoBuscador" type="search" placeholder="Busqueda...">
+                <button class="btn btn-secondary my-2 my-sm-0" id="botonBuscador" type="button">Buscar</button>
+            </form>
+            </div>
+        </div>
     </nav>
 
-    <section id="principal" class="contenedor">
-        
-        <section id="seccionDeProductos">
-            <p>Nuestros productos!</p>
-            <!--Encuentra tus productos-->
-        </section>
+    <!-- HEADER -->
+    <div class="card text-white bg-info mb-3 text-center">
+        <div class="card-body">
+            <h2 class="card-title">Construí tu futuro!</h2>
+            <p class="card-text">En Corralón Casa Gómez vas a poder pedir tus materiales desde la comodidad de tu casa.</p>
+        </div>
+    </div>
 
-        <seccion id="seccionDePedido">
-            <p>Tu pedido</p>
-            <!--Productos seleccionados por el usuario-->
 
-        </seccion>
+    <!-- PARTE PRINCIPAL DEL PROYECTO -->
+    <section id="principal" class="container my-4">
+        <div class="row">
+
+            <!-- Columna 1: productos -->
+            <section id="seccionDeProductos" class="col-12 col-lg-7">
+                <p class="h4">Nuestros productos!</p>
+                <!-- Acá se insertan las tarjetas desde JavaScript -->
+            </section>
+
+            <!-- Columna 2: pedido -->
+            <section id="seccionDePedido" class="col-12 col-lg-5">
+                <p class="h4">Tu pedido</p>
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoPedido">
+                        <!-- Filas del pedido -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">Total</th>
+                            <th id="totalPedido">$0</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </div>
     </section>
-        
 
     <!--
     <footer id="pieDePagina">
