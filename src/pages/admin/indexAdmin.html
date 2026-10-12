@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Casa Gomez</title>
+</head>
+<body>
+    <header id="cabecera">
+        <section class="logo">
+            <img src="img/logo_2.png" alt="" height="80" width="100">
+        </section>
+            
+        <section id="eslogan"> 
+            <h3>Admin</h3>
+        </section>
+    </header>
+
+    <nav id="navegador">
+        <input type="text" class="input" id="casillaBuscador" placeholder="Busca o Elige un filtro...">
+        
+        <button type="button" class="btn" id="botonBuscar">Buscar</button>
+
+        <select id="filtro">
+            <option value="Mostrar todo">Mostrar todo</option>
+            <option value="Mas recientes">Mas recientes</option>
+            <option value="Mas antigüos">Mas antigüos</option>
+            <option value="Materiales">Materiales</option>
+            <option value="Herramientas">Herramientas</option>
+            <option value="Sanitarios">Sanitarios</option>
+        </select>
+
+        <a class="btn" href="subirProducto.html">
+            Agregar Producto
+        </a>
+    </nav>
+
+    <section id="contenedorDeProductos">
+
+    </section>
+        
+
+    <script type="module" src="../../js/controllers/indexAdmin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../../css/bootstrap.min.css" rel="Stylesheet">
+    <link href="../../css/style.css" rel="Stylesheet">
+    <meta charset="UTF-8">
+    <title>Login Casa Gomez</title>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="../../assets/img/logo_2.png" alt="" height="80" width="100">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor04">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index.html">Ir al Inicio
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" id="entradaDeTextoBuscador" type="search" placeholder="Busqueda...">
+                <button class="btn btn-secondary my-2 my-sm-0" id="botonBuscador" type="button">Buscar</button>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="card text-white bg-info mb-3 text-center">
+        <div class="card-body">
+            <h2 class="card-title">Construí tu futuro!</h2>
+            <p class="card-text">En Corralón Casa Gómez vas a poder pedir tus materiales desde la comodidad de tu casa.</p>
+        </div>
+    </div>
+
+
+    <!-- PARTE PRINCIPAL DEL PROYECTO -->
+    <section id="principal" class="container my-4">
+        <div class="row">
+
+            <!-- Columna 1: productos -->
+            <section id="seccionDeProductos" class="col-12 col-lg-7">
+                <p class="h4">Nuestro catálogo!</p>
+                <!-- Acá se insertan las tarjetas desde JavaScript -->
+            </section>
+
+            <!-- Columna 2: pedido -->
+            <section id="seccionDePedido" class="col-12 col-lg-5">
+                <p class="h4">Tu pedido</p>
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoPedido">
+                        <!-- Filas del pedido -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">Total</th>
+                            <th id="totalPedido">$0</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="btn btn-primary" id="confirmarPedido">Confirmar</button>
+                <button class="btn btn-secondary" id="limpiarPedido">Limpiar</button>
+            </section>
+        </div>
+    </section>
+
+    
+
+    <!-- FORMULARIO DE CONFIRMACIÓN DEL PEDIDO -->
+     
+    <form id="formPedido" class="mt-4"> 
+        <h2><strong>Estás a 1 paso de hacer tu pedido</strong></h2>
+        <p><em>Completa el siguiente formulario.</em></p>
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+
+        <!-- Domicilio -->
+        <fieldset class="mb-3">
+            <legend class="h6">Domicilio</legend>
+
+            <div class="mb-3">
+                <label for="localidad" class="form-label">Localidad</label>
+                <select id="localidad" name="localidad" class="form-select" required>
+                    <option value="" selected disabled>Elegí una localidad</option>
+                    
+                    <option>González Catán</option>
+                    <option>Gregorio de Laferrere</option>
+                    <option>Isidro Casanova</option>
+                    <option>San Justo</option>
+                    <option>Virrey del Pino</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="codigoPostal" class="form-label">Código postal</label>
+                <input type="number" id="codigoPostal" name="codigoPostal" class="form-control" min="1000" max="9999" required>
+            </div>
+
+            <div class="row">
+                <div class="col-8 mb-3">
+                    <label for="calle" class="form-label">Calle</label>
+                    <input type="text" id="calle" name="calle" class="form-control" required>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="number" id="numero" name="numero" class="form-control" min="0" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="localidad" class="form-label"><b>Forma de pago</b></label>
+                <select id="formaDePago" name="formaDePago" class="form-select" required>
+                    <option value="" selected disabled>Elegí una forma de pago</option>
+                    
+                    <option>Efectivo</option>
+                    <option>Transferencia</option>
+                </select>
+                <p style="color:red"><em>IMPORTANTE: Recordá que se abona al recibir el pedido.</em></p>
+            </div>
+        </fieldset>
+
+        <!-- Botones -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-secondary">Cancelar</button>
+    </form>
+
+
+
+    <!--
+    <footer id="pieDePagina">
+        <h2>Alumno: Gómez Santiago</h2>
+    </footer>
+    -->
+
+    <script type="module" src="../../js/controllers/indexUser.js"></script>
+    
+</body>
+</html>

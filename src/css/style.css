@@ -1,0 +1,26 @@
+/* SECCION PRINCIPAL (PRODUCTOS + PEDIDO) */
+.container.my-4 {
+    max-height: 50rem;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.card.mb-3 {
+    max-height: 250px;
+}
+
+#seccionDeProductos {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#seccionDePedido {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* ajusto el ancho del formulario del pedido a 80%*/
+#formPedido {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    align-items: center;
+}

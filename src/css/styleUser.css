@@ -1,0 +1,136 @@
+:root{
+    --color-de-fondo-general: #FFFFFF;
+    --color-de-fondo-gris: #EDEDED;
+    --color-de-fondo-naranja: #DC0A2E;
+    --color-de-la-fuente-azul: #203A8F;
+    --ancho: 80%
+    --borde: 3px var(--color-de-la-fuente-azul) solid;
+    --padding-entradas-de-texto: 12px 15px;
+}
+
+body {
+    display: grid;
+    color: var(--color-de-la-fuente-azul);
+    background-color: var(--color-de-fondo-y-fuente);
+    font-family: "Roboto", sans-serif; 
+    margin: 0;
+}
+
+.contenedor {
+    display: grid;
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-fondo-naranja);
+    margin: 20px auto;
+    padding: 20px 25px;
+    text-align: center;
+    border: 4px var(--color-de-la-fuente-azul) solid;
+    border-radius: 10px;
+    min-width: 500px;
+    width: 80%;
+}
+
+nav {
+    display: flex;
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-fondo-naranja);
+    margin: 20px auto;
+    padding: 20px 25px;
+    text-align: center;
+    border: 4px var(--color-de-la-fuente-azul) solid;
+    border-radius: 10px;
+    min-width: 70%;
+    width: 80%;
+}
+
+nav button {
+    margin: 0 15px;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    font-size: 16px;
+    padding: var(--padding-entradas-de-texto);
+    border: var(--borde);
+    border-radius: 8px 0 0 8px; /* esquinas redondeadas */
+    outline: none;
+    max-width: 50%;
+    width: 45%;
+}
+
+.btn{
+    color: var(--color-de-fondo-general);
+    background-color: var(--color-de-la-fuente-azul);
+    border-color: var(--color-de-fondo-general);
+    padding: var(--padding-entradas-de-texto); 
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 3px var(--color-de-fondo-gris) solid;
+}
+
+.btn:hover {
+    color: var(--color-de-la-fuente-azul);
+    background-color: var(--color-de-fondo-gris);
+    border: var(--borde);
+    transition-duration: 0.3s;
+}
+
+#principal {
+    display: flex;
+    align-items: left;
+    max-height: 500px;
+}
+
+#seccionDeProductos {
+    /*display flex*/
+    display: grid;
+    border: var(--borde);
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px 10px;
+    min-width: 50%;
+    width: 50%;
+}
+
+#seccionDePedido {
+    display: grid;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px 10px;
+    min-width: 50%;
+    width: 50%;
+}
+
+.tarjeta {
+    display: flex;
+    font-size: 14px;
+    background-color: var(--color-de-fondo-gris);
+    color: black;
+    min-width: 80%;
+    min-height: 200px;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 20px 7px;
+    padding: 5px 5px;
+    align-items: auto;
+}
+
+.tarjeta img { 
+    min-height: 50px;
+    min-width: 70px; 
+    height: 70px;
+    width: 50px;
+    display: block;  /* evita problemas de alineación */
+    margin: 0 auto; /* centra la imagen */  
+}
