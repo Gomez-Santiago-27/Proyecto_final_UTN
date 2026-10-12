@@ -11,11 +11,18 @@ En 'indexUser.html' se agregó un contenedor donde se alojan tanto los productos
 Productos disponibles |  Tu pedido
 
 
-1) Necesito alinear los elementos de las tarjetas. MI IDEA ES:
+==> NUBE DE PENSAMIENTO
 
-IMAGEN  | TITULO
-        | PRECIO
-        | BOTON_PEDIR
+1) Agregar al formulario la opcion de 'Elegir fecha de envío'.
 
-Y asi con todos los elementos.
-Me voy a dormir.
+2) Crear una solicitud post para enviar el pedido.
+        formPedido.addEventListener('submit', async (evento) => {
+                evento.preventDefault();
+
+        // cuerpo de la solicitud
+        try {
+           const respuesta = await fetch('/api/pedidos', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cliente, productos: pedido })
+        }); 

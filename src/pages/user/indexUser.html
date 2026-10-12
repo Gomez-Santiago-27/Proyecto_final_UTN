@@ -45,7 +45,7 @@
 
             <!-- Columna 1: productos -->
             <section id="seccionDeProductos" class="col-12 col-lg-7">
-                <p class="h4">Nuestros productos!</p>
+                <p class="h4">Nuestro catálogo!</p>
                 <!-- Acá se insertan las tarjetas desde JavaScript -->
             </section>
 
@@ -77,12 +77,16 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONFIRMACIÓN DEL PEDIDO -->
-    <form id="formPedido" class="mt-4">
+    
 
-    <!-- Nombre -->
+    <!-- FORMULARIO DE CONFIRMACIÓN DEL PEDIDO -->
+     
+    <form id="formPedido" class="mt-4"> 
+        <h2><strong>Estás a 1 paso de hacer tu pedido</strong></h2>
+        <p><em>Completa el siguiente formulario.</em></p>
+        <!-- Nombre -->
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre (completo o parcial)</label>
+            <label for="nombre" class="form-label">Nombre</label>
             <input type="text" id="nombre" name="nombre" class="form-control" required>
         </div>
 
@@ -118,29 +122,25 @@
                     <input type="number" id="numero" name="numero" class="form-control" min="0" required>
                 </div>
             </div>
-        </fieldset>
 
-        <!-- Fecha de envío -->
-        <fieldset class="mb-3">
-            <legend class="h6">Fecha de envío</legend>
-
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipoEnvio" id="envioLoAntes" value="lo-antes-posible" checked>
-                <label class="form-check-label" for="envioLoAntes">Lo antes posible</label>
+            <div class="mb-3">
+                <label for="localidad" class="form-label"><b>Forma de pago</b></label>
+                <select id="formaDePago" name="formaDePago" class="form-select" required>
+                    <option value="" selected disabled>Elegí una forma de pago</option>
+                    
+                    <option>Efectivo</option>
+                    <option>Transferencia</option>
+                </select>
+                <p style="color:red"><em>IMPORTANTE: Recordá que se abona al recibir el pedido.</em></p>
             </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipoEnvio" id="envioFecha" value="fecha">
-                <label class="form-check-label" for="envioFecha">Elegir una fecha</label>
-            </div>
-
-            <input type="date" id="fechaEnvio" name="fechaEnvio" class="form-control mt-2" disabled>
         </fieldset>
 
         <!-- Botones -->
         <button type="submit" class="btn btn-primary">Enviar</button>
         <button type="reset" class="btn btn-secondary">Cancelar</button>
     </form>
+
+
 
     <!--
     <footer id="pieDePagina">

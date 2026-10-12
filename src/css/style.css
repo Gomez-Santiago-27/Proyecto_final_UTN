@@ -12,3 +12,15 @@
     max-height: 80vh;
     overflow-y: auto;
 }
+
+#seccionDePedido {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* ajusto el ancho del formulario del pedido a 80%*/
+#formPedido {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    align-items: center;
+}

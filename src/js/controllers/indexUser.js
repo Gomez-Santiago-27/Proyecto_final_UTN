@@ -8,8 +8,10 @@ const totalPedido = document.querySelector("#totalPedido");
 const productos = await obtenerTodosLosProductos();
 const confirmarPedido = document.querySelector("#confirmarPedido");
 const limpiarPedido = document.querySelector("#limpiarPedido");
+const cuadroDialogoLimpiar = document.querySelector("#dialogoLimpiarPedido");
 
 let total = 0;
+let pedido = [];
 
 /**
  * 
@@ -86,6 +88,12 @@ function mostrarProductosBuscados(arreglo) {
  * post : agrega productos a la tabla de pedidos. 
  */
 function agregarAlPedido(producto, cantidad) {
+   pedido.push({
+      id: producto.id,
+      descripcion: producto.descripcion,
+      cantidad: cantidad,
+      precio: producto.precio
+   });
    const subtotal = producto.precio * cantidad;
    total = total + subtotal;
    const fila = document.createElement('tr');
@@ -108,10 +116,13 @@ confirmarPedido.addEventListener('click', () => {
  * post: borra los elementos de la tabla del pedido y reinicia el total a 0.
  */
 limpiarPedido.addEventListener('click', () => {
-   cuerpoPedido.innerHTML = "";
-   total = 0;
-   totalPedido.textContent =  `$${total}`;
-})
+   if (confirm("¿Estás seguro de querer borrar el presupuesto actual?")) {
+      cuerpoPedido.innerHTML = "";
+      total = 0;
+      pedido = [];
+      totalPedido.textContent =  `$${total}`;
+   }
+});
 
 mostrarTodosLosProductos(productos);
 

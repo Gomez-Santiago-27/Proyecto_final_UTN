@@ -3,7 +3,7 @@ import Producto from '../models/Producto.js';
 
 export function guardarProductoEnJSON(imagen, descripcion, categoria, precio) {
      // 1- Busca el archivo 'productos.json'
-     let productos = JSON.parse(fs.readFileSync('../../data/productos.json', 'utf8'));
+     let productos = JSON.parse(fs.readFileSync('/src/data/productos.json', 'utf8'));
 
      //2- crea el objeto Producto
      let nuevoProducto = new Producto(
